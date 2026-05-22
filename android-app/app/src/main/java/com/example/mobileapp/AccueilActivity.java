@@ -8,16 +8,17 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-// EXERCICE 1 + 2 + 3 : Deconnexion avec AlertDialog
+// EXERCICE 1+2+3+5 : Paramètres + theme
 public class AccueilActivity extends AppCompatActivity {
     private static final String PREFS_NAME = "MobileAppPrefs";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accueil);
-        TextView tvConnexion   = findViewById(R.id.tvConnexion);
-        TextView tvDate        = findViewById(R.id.tvDate);
-        Button   btnProfil     = findViewById(R.id.btnProfil);
+        TextView tvConnexion    = findViewById(R.id.tvConnexion);
+        TextView tvDate         = findViewById(R.id.tvDate);
+        Button   btnProfil      = findViewById(R.id.btnProfil);
+        Button   btnParametres  = findViewById(R.id.btnParametres);
         Button   btnDeconnexion = findViewById(R.id.btnDeconnexion);
 
         Intent intent = getIntent();
@@ -26,20 +27,24 @@ public class AccueilActivity extends AppCompatActivity {
 
         btnProfil.setOnClickListener(v -> startActivity(new Intent(this, ProfilActivity.class)));
 
+        btnParametres.setVisibility(android.view.View.VISIBLE);
+        btnParametres.setOnClickListener(v -> startActivity(new Intent(this, ParametresActivity.class)));
+
         btnDeconnexion.setVisibility(android.view.View.VISIBLE);
         btnDeconnexion.setOnClickListener(v ->
             new AlertDialog.Builder(this)
                 .setTitle("Déconnexion")
                 .setMessage("Voulez-vous vraiment vous déconnecter ?")
                 .setPositiveButton("OUI", (d, w) -> {
-                    SharedPreferences.Editor ed = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
-                    ed.remove("saved_password");
-                    ed.apply();
+                    getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit().remove("saved_password").apply();
                     Intent li = new Intent(this, MainActivity.class);
                     li.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(li);
                 })
-                .setNegativeButton("NON", (d, w) -> d.dismiss())
-                .show());
+                .setNegativeButton("NON", (d, w) -> d.dismiss()).show());
+    }
+    @Override protected void onResume() {
+        super.onResume();
+        ThemeHelper.applyTheme(this, findViewById(R.id.rootLayout));
     }
 }
