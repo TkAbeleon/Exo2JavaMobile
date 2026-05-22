@@ -1,10 +1,12 @@
 package com.example.mobileapp;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -98,7 +100,12 @@ public class ProfilActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        // EXERCICE 5 : réappliquer le thème à chaque retour
+        // EXERCICE 5 : réappliquer le thème à chaque retour (LinearLayout + ScrollView)
         ThemeHelper.applyTheme(this, findViewById(R.id.rootLayout));
+        boolean isDark = ThemeHelper.THEME_DARK.equals(ThemeHelper.getTheme(this));
+        ScrollView sv = findViewById(R.id.scrollViewProfil);
+        if (sv != null) {
+            sv.setBackgroundColor(isDark ? Color.parseColor("#121212") : Color.WHITE);
+        }
     }
 }
