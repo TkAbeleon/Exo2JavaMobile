@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/scrollViewProfil"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    >
 
     <LinearLayout
         android:id="@+id/rootLayout"
@@ -11,77 +12,106 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="32dp"
-        android:background="@color/white">
+        >
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@android:drawable/ic_menu_myplaces"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            app:tint="@color/colorPrimary" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mon Profil"
-            android:textSize="26sp"
+            android:textSize="32sp"
             android:textStyle="bold"
             android:textColor="@color/colorPrimary"
-            android:layout_marginBottom="24dp" />
+            android:layout_gravity="center"
+            android:layout_marginBottom="32dp" />
 
         <!-- Informations utilisateur -->
-        <TextView
-            android:id="@+id/tvEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Email : --"
-            android:textSize="16sp"
-            android:textColor="#333333"
-            android:layout_marginBottom="8dp" />
-
-        <TextView
-            android:id="@+id/tvPremiereConnexion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Première connexion : --"
-            android:textSize="15sp"
-            android:textColor="#555555"
-            android:layout_marginBottom="8dp" />
-
-        <TextView
-            android:id="@+id/tvDerniereConnexion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dernière connexion : --"
-            android:textSize="15sp"
-            android:textColor="#555555"
-            android:layout_marginBottom="24dp" />
-
-        <!-- Séparateur -->
-        <View
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#DDDDDD"
-            android:layout_marginBottom="16dp" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="?attr/colorSurfaceVariant"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email : --"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/tvPremiereConnexion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Première connexion : --"
+                    android:textSize="15sp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/tvDerniereConnexion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dernière connexion : --"
+                    android:textSize="15sp"
+                    android:textColor="?android:attr/textColorSecondary" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- Exercice 4 : Visites du profil -->
-        <TextView
-            android:id="@+id/tvDerniereVisite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dernière visite du profil : --"
-            android:textSize="15sp"
-            android:textColor="#555555"
-            android:layout_marginBottom="8dp" />
-
-        <TextView
-            android:id="@+id/tvNbVisites"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nombre de visites du profil : 0"
-            android:textSize="15sp"
-            android:textColor="#555555"
-            android:layout_marginBottom="24dp" />
-
-        <!-- Séparateur -->
-        <View
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#DDDDDD"
-            android:layout_marginBottom="16dp" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="?attr/colorSurfaceVariant"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/tvDerniereVisite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dernière visite du profil : --"
+                    android:textSize="15sp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/tvNbVisites"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre de visites du profil : 0"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="?android:attr/textColorPrimary" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- Exercice 6 : Modification email -->
         <TextView
@@ -90,38 +120,42 @@
             android:text="Modifier mon email"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="#333333"
+            android:textColor="@color/colorPrimary"
             android:layout_marginBottom="12dp" />
 
-        <EditText
+        <EditText android:textColor="?android:attr/textColorPrimary" android:textColorHint="?android:attr/textColorSecondary"
             android:id="@+id/etNouvelEmail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:hint="Nouvel email"
             android:inputType="textEmailAddress"
-            android:padding="12dp"
+            android:paddingHorizontal="16dp"
             android:background="@drawable/input_background"
             android:layout_marginBottom="12dp" />
 
         <Button
             android:id="@+id/btnChangerEmail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:text="Changer mon email"
+            android:textSize="16sp"
+            android:textStyle="bold"
             android:backgroundTint="@color/colorPrimary"
             android:textColor="@color/white"
-            android:padding="12dp"
-            android:layout_marginBottom="24dp" />
+            android:layout_marginBottom="32dp"
+            app:cornerRadius="12dp" />
 
         <!-- Bouton Retour -->
         <Button
             android:id="@+id/btnRetour"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Retour"
+            android:layout_height="56dp"
+            android:text="Retour à l'accueil"
+            android:textSize="16sp"
+            android:textStyle="bold"
             android:backgroundTint="#607D8B"
             android:textColor="@color/white"
-            android:padding="12dp" />
+            app:cornerRadius="12dp" />
 
     </LinearLayout>
 </ScrollView>

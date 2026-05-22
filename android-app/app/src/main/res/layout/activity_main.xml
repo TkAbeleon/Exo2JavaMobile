@@ -1,45 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="32dp"
     android:gravity="center"
-    android:background="@color/white">
+    >
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@android:drawable/ic_lock_idle_lock"
+        android:layout_marginBottom="16dp"
+        app:tint="@color/colorPrimary" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Connexion"
-        android:textSize="28sp"
+        android:text="Bienvenue"
+        android:textSize="32sp"
         android:textStyle="bold"
         android:textColor="@color/colorPrimary"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Veuillez vous connecter pour continuer"
+        android:textSize="14sp"
+        android:textColor="?android:attr/textColorSecondary"
         android:layout_marginBottom="40dp" />
 
-    <EditText
+    <EditText android:textColor="?android:attr/textColorPrimary" android:textColorHint="?android:attr/textColorSecondary"
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email"
+        android:layout_height="50dp"
+        android:hint="Adresse Email"
         android:inputType="textEmailAddress"
-        android:padding="12dp"
+        android:paddingHorizontal="16dp"
         android:background="@drawable/input_background"
         android:layout_marginBottom="16dp" />
 
-    <EditText
+    <EditText android:textColor="?android:attr/textColorPrimary" android:textColorHint="?android:attr/textColorSecondary"
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:hint="Mot de passe"
         android:inputType="textPassword"
-        android:padding="12dp"
+        android:paddingHorizontal="16dp"
         android:background="@drawable/input_background"
         android:layout_marginBottom="16dp" />
 
     <CheckBox
         android:id="@+id/cbRememberMe"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Se souvenir de moi"
         android:layout_marginBottom="24dp" />
@@ -47,18 +63,20 @@
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:text="Se connecter"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:backgroundTint="@color/colorPrimary"
         android:textColor="@color/white"
-        android:padding="14dp" />
+        app:cornerRadius="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mot de passe de démo : 1234"
-        android:textSize="12sp"
-        android:textColor="#888888"
-        android:layout_marginTop="16dp" />
+        android:textSize="13sp"
+        android:textColor="?android:attr/textColorSecondary"
+        android:layout_marginTop="24dp" />
 
 </LinearLayout>

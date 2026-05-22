@@ -2,8 +2,8 @@ package com.example.mobileapp;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.view.View;
+import androidx.appcompat.app.AppCompatDelegate;
 
 public class ThemeHelper {
 
@@ -13,7 +13,7 @@ public class ThemeHelper {
     public static final String THEME_DARK = "dark";
 
     /**
-     * Sauvegarde le thème choisi dans SharedPreferences.
+     * Sauvegarde le thème choisi dans SharedPreferences et applique le changement.
      */
     public static void saveTheme(Context context, String theme) {
         SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
@@ -29,38 +29,15 @@ public class ThemeHelper {
     }
 
     /**
-     * Applique le thème (fond + texte) sur la vue racine d'une activité.
+     * Applique le thème globalement grâce au AppCompatDelegate.
+     * Le View n'est gardé que pour la rétrocompatibilité des appels existants.
      */
     public static void applyTheme(Context context, View rootView) {
         String theme = getTheme(context);
         if (THEME_DARK.equals(theme)) {
-            rootView.setBackgroundColor(Color.parseColor("#121212"));
-            applyTextColorRecursive(rootView, Color.WHITE);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         } else {
-            rootView.setBackgroundColor(Color.WHITE);
-            applyTextColorRecursive(rootView, Color.parseColor("#212121"));
-        }
-    }
-
-    /**
-     * Applique récursivement la couleur du texte sur tous les TextView
-     * et la couleur de fond sur les EditText d'un groupe de vues.
-     */
-    private static void applyTextColorRecursive(View view, int textColor) {
-        if (view instanceof android.widget.TextView) {
-            ((android.widget.TextView) view).setTextColor(textColor);
-        }
-        if (view instanceof android.widget.EditText) {
-            boolean isDark = textColor == Color.WHITE;
-            ((android.widget.EditText) view).setTextColor(textColor);
-            ((android.widget.EditText) view).setHintTextColor(isDark ? Color.GRAY : Color.DKGRAY);
-            view.setBackgroundColor(isDark ? Color.parseColor("#1E1E1E") : Color.parseColor("#F5F5F5"));
-        }
-        if (view instanceof android.view.ViewGroup) {
-            android.view.ViewGroup group = (android.view.ViewGroup) view;
-            for (int i = 0; i < group.getChildCount(); i++) {
-                applyTextColorRecursive(group.getChildAt(i), textColor);
-            }
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
     }
 }

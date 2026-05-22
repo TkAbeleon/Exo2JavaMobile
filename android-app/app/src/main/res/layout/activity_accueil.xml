@@ -1,72 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="32dp"
     android:gravity="center"
-    android:background="@color/white">
+    >
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@android:drawable/ic_menu_preferences"
+        android:layout_marginBottom="16dp"
+        app:tint="@color/colorPrimary" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bienvenue !"
-        android:textSize="28sp"
+        android:text="Accueil"
+        android:textSize="32sp"
         android:textStyle="bold"
         android:textColor="@color/colorPrimary"
-        android:layout_marginBottom="24dp" />
+        android:layout_marginBottom="32dp" />
 
     <!-- Exercice 1 : Heure et date de connexion -->
-    <TextView
-        android:id="@+id/tvConnexion"
-        android:layout_width="wrap_content"
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Connecté à --:--:--"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="#333333"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="40dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="?attr/colorSurfaceVariant"
+        app:strokeWidth="0dp">
 
-    <TextView
-        android:id="@+id/tvDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Date : --/--/----"
-        android:textSize="16sp"
-        android:textColor="#555555"
-        android:layout_marginBottom="40dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/tvConnexion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Connecté à --:--:--"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="?android:attr/textColorPrimary"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date : --/--/----"
+                android:textSize="16sp"
+                android:textColor="?android:attr/textColorSecondary" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <!-- Exercice 2 : Bouton Profil -->
     <Button
         android:id="@+id/btnProfil"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:text="Mon Profil"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:backgroundTint="@color/colorPrimary"
         android:textColor="@color/white"
-        android:padding="14dp"
-        android:layout_marginBottom="12dp" />
+        android:layout_marginBottom="16dp"
+        app:cornerRadius="12dp" />
 
     <!-- Exercice 5 : Bouton Paramètres -->
     <Button
         android:id="@+id/btnParametres"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:text="Paramètres"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:backgroundTint="#607D8B"
         android:textColor="@color/white"
-        android:padding="14dp"
-        android:layout_marginBottom="12dp" />
+        android:layout_marginBottom="32dp"
+        app:cornerRadius="12dp" />
 
     <!-- Exercice 3 : Bouton Déconnexion -->
     <Button
         android:id="@+id/btnDeconnexion"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:text="Déconnexion"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:backgroundTint="#F44336"
         android:textColor="@color/white"
-        android:padding="14dp" />
+        app:cornerRadius="12dp" />
 
 </LinearLayout>
