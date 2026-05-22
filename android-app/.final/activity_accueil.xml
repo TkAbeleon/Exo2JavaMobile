@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="32dp"
+    android:gravity="center"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenue !"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Exercice 1 : Heure et date de connexion -->
+    <TextView
+        android:id="@+id/tvConnexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connecté à --:--:--"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date : --/--/----"
+        android:textSize="16sp"
+        android:textColor="#555555"
+        android:layout_marginBottom="40dp" />
+
+    <!-- Exercice 2 : Bouton Profil -->
+    <Button
+        android:id="@+id/btnProfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mon Profil"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:padding="14dp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Exercice 5 : Bouton Paramètres -->
+    <Button
+        android:id="@+id/btnParametres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Paramètres"
+        android:backgroundTint="#607D8B"
+        android:textColor="@color/white"
+        android:padding="14dp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Exercice 3 : Bouton Déconnexion -->
+    <Button
+        android:id="@+id/btnDeconnexion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Déconnexion"
+        android:backgroundTint="#F44336"
+        android:textColor="@color/white"
+        android:padding="14dp" />
+
+</LinearLayout>

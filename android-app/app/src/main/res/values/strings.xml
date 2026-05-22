@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Mobile App</string>
+    <string name="login_title">Connexion</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Mot de passe</string>
+    <string name="remember_me">Se souvenir de moi</string>
+    <string name="login_button">Se connecter</string>
+    <string name="welcome_title">Écran d\'accueil</string>
+    <string name="profil_title">Mon Profil</string>
+    <string name="parametres_title">Paramètres</string>
+    <string name="back_button">Retour</string>
+    <string name="logout_button">Déconnexion</string>
+    <string name="profil_button">Mon Profil</string>
+    <string name="parametres_button">Paramètres</string>
+    <string name="logout_confirm">Voulez-vous vraiment vous déconnecter ?</string>
+    <string name="oui">OUI</string>
+    <string name="non">NON</string>
+    <string name="theme_clair">Thème clair</string>
+    <string name="theme_sombre">Thème sombre</string>
+    <string name="changer_email">Changer mon email</string>
+    <string name="email_mis_a_jour">Email mis à jour</string>
+    <string name="email_invalide">Email invalide</string>
+    <string name="email_vide">Le champ email ne peut pas être vide</string>
+</resources>

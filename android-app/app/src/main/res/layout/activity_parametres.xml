@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="32dp"
+    android:gravity="center"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paramètres"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginBottom="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choisissez votre thème :"
+        android:textSize="16sp"
+        android:textColor="#555555"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btnThemeClair"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="☀  Thème clair"
+        android:backgroundTint="#FFF9C4"
+        android:textColor="#333333"
+        android:padding="14dp"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnThemeSombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🌙  Thème sombre"
+        android:backgroundTint="#37474F"
+        android:textColor="@color/white"
+        android:padding="14dp"
+        android:layout_marginBottom="32dp" />
+
+    <Button
+        android:id="@+id/btnRetour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Retour"
+        android:backgroundTint="#607D8B"
+        android:textColor="@color/white"
+        android:padding="12dp" />
+
+</LinearLayout>
